@@ -1,14 +1,23 @@
 export class Bowling {
   constructor() {
-    this.totalScore = 0;
+    this.rolls = [];
   }
 
   roll(pins) {
-    this.totalScore += pins;
+    this.rolls = [...this.rolls, pins];
   }
 
   score() {
-    return this.totalScore;
+    return this.sumRolls();
+  }
+
+  sumRolls() {
+    let score = 0;
+    this.rolls.forEach(roll => {
+        score += roll;
+    });
+
+    return score;
   }
 }
 
