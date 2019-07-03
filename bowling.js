@@ -16,7 +16,7 @@ export class Bowling {
       if (index % 2){
         return frames
       }
-      return [...frames, [ roll, rolls[index + 1 ] || 0]]
+      return [...frames, [ roll, rolls[index + 1 ]]]
     }, [])
   }
 
