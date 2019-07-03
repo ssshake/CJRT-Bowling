@@ -37,7 +37,7 @@ describe('Bowling', () => {
       expect(bowling.score()).toEqual(31);
     });
 
-    xtest('a spare in the last frame gets a one roll bonus that is counted once', () => {
+    test('a spare in the last frame gets a one roll bonus that is counted once', () => {
       const rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 7];
       const bowling = new Bowling();
       rolls.forEach((roll) => { bowling.roll(roll); });

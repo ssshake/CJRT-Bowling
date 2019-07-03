@@ -16,12 +16,17 @@ export class Bowling {
       if (index % 2){
         return frames
       }
-      return [...frames, [ roll, rolls[index + 1 ]]]
+      return [...frames, [ roll, rolls[index + 1 ] || 0]]
     }, [])
   }
 
   sumRolls() {
-    return this.frames().reduce((score, frame, index, frames) => score + this.getFrameScore(frame, index, frames), 0)
+    return this.frames().reduce((score, frame, index, frames) => {
+      if (index === 10) {
+        return score;
+      }
+      return score + this.getFrameScore(frame, index, frames)
+    }, 0)
   }
 
   getFrameScore(frame, index, frames) {
